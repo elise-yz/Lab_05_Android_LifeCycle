@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50"/>
+
+    <TextView
+        android:id="@+id/lifetime_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lifetime_header"
+        android:textStyle="bold"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_oncreate"/>
+
+    <TextView
+        android:id="@+id/lifetime_oncreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oncreate_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_header"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_onstart"/>
+
+    <TextView
+        android:id="@+id/lifetime_onstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onstart_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_oncreate"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_onresume"/>
+
+    <TextView
+        android:id="@+id/lifetime_onresume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onresume_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_onstart"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_onpause"/>
+
+    <TextView
+        android:id="@+id/lifetime_onpause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onpause_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_onresume"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_onstop"/>
+
+    <TextView
+        android:id="@+id/lifetime_onstop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onstop_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_onpause"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_onrestart"/>
+
+    <TextView
+        android:id="@+id/lifetime_onrestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onrestart_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_onstop"
+        app:layout_constraintBottom_toTopOf="@id/lifetime_ondestroy"/>
+
+    <TextView
+        android:id="@+id/lifetime_ondestroy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ondestroy_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_onrestart"
+        app:layout_constraintBottom_toBottomOf="@id/lifetime_reset"/>
+
+    <TextView
+        android:id="@+id/this_run_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/this_run_header"
+        android:textStyle="bold"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/this_run_oncreate"/>
+
+    <TextView
+        android:id="@+id/this_run_oncreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oncreate_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_header"
+        app:layout_constraintBottom_toTopOf="@id/this_run_onstart"/>
+
+    <TextView
+        android:id="@+id/this_run_onstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onstart_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_oncreate"
+        app:layout_constraintBottom_toTopOf="@id/this_run_onresume"/>
+
+    <TextView
+        android:id="@+id/this_run_onresume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onresume_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_onstart"
+        app:layout_constraintBottom_toTopOf="@id/this_run_onpause"/>
+
+    <TextView
+        android:id="@+id/this_run_onpause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onpause_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_onresume"
+        app:layout_constraintBottom_toTopOf="@id/this_run_onstop"/>
+
+    <TextView
+        android:id="@+id/this_run_onstop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onstop_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_onpause"
+        app:layout_constraintBottom_toTopOf="@id/this_run_onrestart"/>
+
+    <TextView
+        android:id="@+id/this_run_onrestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onrestart_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_onstop"
+        app:layout_constraintBottom_toTopOf="@id/this_run_ondestroy"/>
+
+    <TextView
+        android:id="@+id/this_run_ondestroy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ondestroy_initial"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/this_run_onrestart"
+        app:layout_constraintBottom_toTopOf="@id/this_run_reset"/>
+
+    <Button
+        android:id="@+id/lifetime_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:textAllCaps="false"
+        android:text="@string/reset_button"
+        app:layout_constraintTop_toBottomOf="@id/lifetime_ondestroy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/vertical_guideline"
+        android:backgroundTint="@color/cardview_dark_background"/>
+
+    <Button
+        android:id="@+id/this_run_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:textAllCaps="false"
+        android:text="@string/reset_button"
+        app:layout_constraintTop_toBottomOf="@id/this_run_ondestroy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/cardview_dark_background"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

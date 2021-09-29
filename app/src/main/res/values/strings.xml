@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lab05 Android LifeCycle</string>
+    <string name="lifetime_header">Lifetime:</string>
+    <string name="oncreate_initial">onCreate: 0</string>
+    <string name="onstart_initial">onStart: 0</string>
+    <string name="onresume_initial">onResume: 0</string>
+    <string name="onpause_initial">onPause: 0</string>
+    <string name="onstop_initial">onStop: 0</string>
+    <string name="onrestart_initial">onRestart: 0</string>
+    <string name="ondestroy_initial">onDestroy: 0</string>
+    <string name="this_run_header">This Run:</string>
+    <string name="reset_button">reset</string>
+</resources>
