@@ -10,4 +10,19 @@
     <string name="ondestroy_initial">onDestroy: 0</string>
     <string name="this_run_header">This Run:</string>
     <string name="reset_button">reset</string>
+    
+    <string name="lifetime_on_create">onCreate: %1$d</string>
+    <string name="lifetime_on_start">onStart: %1$d</string>
+    <string name="lifetime_on_resume">onResume: %1$d</string>
+    <string name="lifetime_on_pause">onPause: %1$d</string>
+    <string name="lifetime_on_stop">onStop: %1$d</string>
+    <string name="lifetime_on_restart">onRestart: %1$d</string>
+    <string name="lifetime_on_destroy">onDestroy: %1$d</string>
+    <string name="this_run_on_create">onCreate: %1$d</string>
+    <string name="this_run_on_start">onStart: %1$d</string>
+    <string name="this_run_on_resume">onResume: %1$d</string>
+    <string name="this_run_on_pause">onPause: %1$d</string>
+    <string name="this_run_on_stop">onStop: %1$d</string>
+    <string name="this_run_on_restart">onRestart: %1$d</string>
+    <string name="this_run_on_destroy">onDestroy: %1$d</string>
 </resources>

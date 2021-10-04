@@ -192,7 +192,9 @@
         app:layout_constraintBottom_toTopOf="@id/this_run_reset"/>
 
     <Button
+
         android:id="@+id/lifetime_reset"
+        android:onClick="LifetimeReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size"
@@ -206,6 +208,7 @@
 
     <Button
         android:id="@+id/this_run_reset"
+        android:onClick="ThisRunReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size"
@@ -216,4 +219,5 @@
         app:layout_constraintLeft_toLeftOf="@id/vertical_guideline"
         app:layout_constraintRight_toRightOf="parent"
         android:backgroundTint="@color/cardview_dark_background"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
