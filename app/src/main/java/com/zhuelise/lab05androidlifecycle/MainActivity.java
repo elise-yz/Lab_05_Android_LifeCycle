@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-    int lifetimeOnCreate, lifetimeOnStart, lifetimeOnResume, lifetimeOnPause, lifetimeOnStop, lifetimeOnRestart, lifetimeOnDestroy = 0;
+    int lifetimeOnCreate, lifetimeOnPause, lifetimeOnStop, lifetimeOnDestroy, lifetimeOnStart, lifetimeOnResume, lifetimeOnRestart = 0;
     int thisRunOnCreate, thisRunOnStart, thisRunOnResume, thisRunOnPause, thisRunOnStop, thisRunOnRestart, thisRunOnDestroy = 0;
     TextView lOnCreate, lOnStart, lOnResume, lOnPause, lOnStop, lOnRestart, lOnDestroy, tOnCreate, tOnStart, tOnResume, tOnPause, tOnStop, tOnRestart, tOnDestroy;
     Button lifetimeRestart, thisRunRestart;
@@ -59,12 +59,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        setInitialValues();
         lifetimeOnResume++;
         thisRunOnResume++;
         lOnResume.setText(getString(R.string.lifetime_on_resume, lifetimeOnResume));
         tOnResume.setText(getString(R.string.this_run_on_resume, thisRunOnResume));
-    }
+        }
 
     @Override
     protected void onPause() {
@@ -90,18 +89,26 @@ public class MainActivity extends AppCompatActivity {
         thisRunOnStop++;
         lOnStop.setText(getString(R.string.lifetime_on_stop, lifetimeOnStop));
         tOnStop.setText(getString(R.string.this_run_on_stop, thisRunOnStop));
+        editor.putInt("lifetimeOnCreate", lifetimeOnCreate);
+        editor.putInt("lifetimeOnStart", lifetimeOnStart);
+        editor.putInt("lifetimeOnResume", lifetimeOnResume);
+        editor.putInt("lifetimeOnPause", lifetimeOnPause);
+        editor.putInt("lifetimeOnStop", lifetimeOnStop);
+        editor.putInt("lifetimeOnRestart", lifetimeOnRestart);
+        editor.putInt("lifetimeOnDestroy", lifetimeOnDestroy);
+        editor.apply();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
+        //setInitialValues();
         lifetimeOnRestart++;
         thisRunOnRestart++;
         lOnRestart.setText(getString(R.string.lifetime_on_restart, lifetimeOnRestart));
         tOnRestart.setText(getString(R.string.this_run_on_restart, thisRunOnRestart));
     }
 
-    //change orientation, close and restart app (never shows up in counts because app is destroyed)
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -109,6 +116,14 @@ public class MainActivity extends AppCompatActivity {
         thisRunOnDestroy++;
         lOnDestroy.setText(getString(R.string.lifetime_on_destroy, lifetimeOnDestroy));
         tOnDestroy.setText(getString(R.string.this_run_on_destroy, thisRunOnDestroy));
+        editor.putInt("lifetimeOnCreate", lifetimeOnCreate);
+        editor.putInt("lifetimeOnStart", lifetimeOnStart);
+        editor.putInt("lifetimeOnResume", lifetimeOnResume);
+        editor.putInt("lifetimeOnPause", lifetimeOnPause);
+        editor.putInt("lifetimeOnStop", lifetimeOnStop);
+        editor.putInt("lifetimeOnRestart", lifetimeOnRestart);
+        editor.putInt("lifetimeOnDestroy", lifetimeOnDestroy);
+        editor.apply();
     }
 
     private void setInitialValues() {
@@ -130,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
         lifetimeOnDestroy = 0;
         lifetimeOnStop = 0;
         editor.clear();
-        setInitialValues();
         editor.apply();
+        setInitialValues();
     }
 
     public void ThisRunReset(View view) {
